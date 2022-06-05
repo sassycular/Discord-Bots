@@ -1,0 +1,32 @@
+import discord
+import os
+from stackapi import StackAPI
+SITE = StackAPI('stackoverflow')
+
+client = discord.Client()
+
+@client.event 
+async def on_ready():
+  print('We have logged in as {0.user}'.format(client))
+
+@client.event 
+async def on_message(message):
+  if message.author == client.user:
+    return
+
+  if message.content.startswith('$hello'): 
+    await message.channel.send('Hello!')
+  if message.content.startswith('$stack'):
+    msg = message.content.split(" ")
+    try: lim = int(msg[2])
+    except: lim = 5
+    try: startdate = int(msg[3])
+    except:  startdate = 1577903194
+    try: enddate = int(msg[4])
+    except: enddate = 1653157594
+    
+    questions = SITE.fetch('questions', fromdate=startdate, todate = enddate, min=lim, tagged=msg[1], sort='votes') 
+    # $stack keyword limit startdate enddate
+    await message.channel.send(str(questions)[:2000])
+
+client.run(os.getenv('UwU'))
