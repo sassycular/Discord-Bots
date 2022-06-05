@@ -1,5 +1,5 @@
 # Created for Strawhats DAO in May 2022
-# This is a Selenium based bot 
+# This is a Python and Selenium based bot 
 # Ran this bot on Repl.it so there's some things you need to do before you can run Selenium on Repl.it
 # This bot can take your question from a Discord server that its added to and post it on your StackOverflow Teams page 
 # The code is 'well commented' for understanding
