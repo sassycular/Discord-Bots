@@ -1,4 +1,6 @@
+# Created for Strawhats DAO in May 2022
 # This is a Selenium based bot 
+# Ran this bot on Repl.it so there's some things you need to do before you can run Selenium on Repl.it
 # This bot can take your question from a Discord server that its added to and post it on your StackOverflow Teams page 
 # The code is 'well commented' for understanding
 # Type $post and write your question although you can change this command in the code to whatever you like 
